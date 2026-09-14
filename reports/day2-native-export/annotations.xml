@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="utf-8"?>
+<annotations>
+  <version>1.1</version>
+  <meta>
+    <job>
+      <id>7</id>
+      <size>4</size>
+      <mode>annotation</mode>
+      <overlap>0</overlap>
+      <bugtracker></bugtracker>
+      <created>2026-09-14 02:37:14.949940+00:00</created>
+      <updated>2026-09-14 03:08:12.999236+00:00</updated>
+      <subset>default</subset>
+      <start_frame>0</start_frame>
+      <stop_frame>3</stop_frame>
+      <frame_filter></frame_filter>
+      <segments>
+        <segment>
+          <id>7</id>
+          <start>0</start>
+          <stop>3</stop>
+          <url>http://localhost:8080/api/jobs/7/dataset/export/api/jobs/7</url>
+        </segment>
+      </segments>
+      <owner>
+        <username>admin</username>
+        <email>admin@example.com</email>
+      </owner>
+      <assignee></assignee>
+      <labels>
+        <label>
+          <name>car</name>
+          <color>#2080c0</color>
+          <type>any</type>
+          <attributes>
+            <attribute>
+              <name>visibility</name>
+              <mutable>True</mutable>
+              <input_type>select</input_type>
+              <default_value>clear</default_value>
+              <values>clear
+occluded
+unclear</values>
+            </attribute>
+            <attribute>
+              <name>boundary</name>
+              <mutable>True</mutable>
+              <input_type>select</input_type>
+              <default_value>inside</default_value>
+              <values>inside
+truncated</values>
+            </attribute>
+            <attribute>
+              <name>review_state</name>
+              <mutable>True</mutable>
+              <input_type>select</input_type>
+              <default_value>confident</default_value>
+              <values>confident
+needs_review</values>
+            </attribute>
+          </attributes>
+        </label>
+        <label>
+          <name>truck</name>
+          <color>#906080</color>
+          <type>any</type>
+          <attributes>
+            <attribute>
+              <name>visibility</name>
+              <mutable>True</mutable>
+              <input_type>select</input_type>
+              <default_value>clear</default_value>
+              <values>clear
+occluded
+unclear</values>
+            </attribute>
+            <attribute>
+              <name>boundary</name>
+              <mutable>True</mutable>
+              <input_type>select</input_type>
+              <default_value>inside</default_value>
+              <values>inside
+truncated</values>
+            </attribute>
+            <attribute>
+              <name>review_state</name>
+              <mutable>True</mutable>
+              <input_type>select</input_type>
+              <default_value>confident</default_value>
+              <values>confident
+needs_review</values>
+            </attribute>
+          </attributes>
+        </label>
+        <label>
+          <name>bus</name>
+          <color>#204080</color>
+          <type>any</type>
+          <attributes>
+            <attribute>
+              <name>visibility</name>
+              <mutable>True</mutable>
+              <input_type>select</input_type>
+              <default_value>clear</default_value>
+              <values>clear
+occluded
+unclear</values>
+            </attribute>
+            <attribute>
+              <name>boundary</name>
+              <mutable>True</mutable>
+              <input_type>select</input_type>
+              <default_value>inside</default_value>
+              <values>inside
+truncated</values>
+            </attribute>
+            <attribute>
+              <name>review_state</name>
+              <mutable>True</mutable>
+              <input_type>select</input_type>
+              <default_value>confident</default_value>
+              <values>confident
+needs_review</values>
+            </attribute>
+          </attributes>
+        </label>
+        <label>
+          <name>van</name>
+          <color>#10a040</color>
+          <type>any</type>
+          <attributes>
+            <attribute>
+              <name>visibility</name>
+              <mutable>True</mutable>
+              <input_type>select</input_type>
+              <default_value>clear</default_value>
+              <values>clear
+occluded
+unclear</values>
+            </attribute>
+            <attribute>
+              <name>boundary</name>
+              <mutable>True</mutable>
+              <input_type>select</input_type>
+              <default_value>inside</default_value>
+              <values>inside
+truncated</values>
+            </attribute>
+            <attribute>
+              <name>review_state</name>
+              <mutable>True</mutable>
+              <input_type>select</input_type>
+              <default_value>confident</default_value>
+              <values>confident
+needs_review</values>
+            </attribute>
+          </attributes>
+        </label>
+      </labels>
+    </job>
+    <dumped>2026-09-14 03:45:33.711578+00:00</dumped>
+  </meta>
+  <image id="0" name="drive_008.jpg" width="640" height="640">
+    <box label="car" source="manual" occluded="0" xtl="396.77" ytl="289.25" xbr="486.17" ybr="376.42" z_order="0">
+      <attribute name="visibility">clear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="394.59" ytl="426.00" xbr="501.59" ybr="562.65" z_order="0">
+      <attribute name="visibility">clear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="107.03" ytl="102.06" xbr="153.71" ybr="152.09" z_order="0">
+      <attribute name="visibility">occluded</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="van" source="manual" occluded="0" xtl="162.71" ytl="90.88" xbr="206.32" ybr="139.01" z_order="0">
+      <attribute name="visibility">clear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="189.80" ytl="177.30" xbr="241.00" ybr="240.40" z_order="0">
+      <attribute name="visibility">clear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="van" source="manual" occluded="0" xtl="144.90" ytl="120.93" xbr="197.33" ybr="182.17" z_order="0">
+      <attribute name="visibility">clear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="270.58" ytl="201.53" xbr="333.11" ybr="261.65" z_order="0">
+      <attribute name="visibility">occluded</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="van" source="manual" occluded="0" xtl="284.82" ytl="252.03" xbr="348.61" ybr="355.80" z_order="0">
+      <attribute name="visibility">clear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="bus" source="manual" occluded="0" xtl="365.31" ytl="111.99" xbr="603.26" ybr="334.97" z_order="0">
+      <attribute name="visibility">clear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="truck" source="manual" occluded="0" xtl="233.91" ytl="73.64" xbr="337.55" ybr="209.97" z_order="0">
+      <attribute name="visibility">clear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="621.70" ytl="550.89" xbr="640.00" ybr="640.00" z_order="0">
+      <attribute name="visibility">unclear</attribute>
+      <attribute name="boundary">truncated</attribute>
+      <attribute name="review_state">needs_review</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="624.56" ytl="258.49" xbr="639.28" ybr="345.99" z_order="0">
+      <attribute name="visibility">unclear</attribute>
+      <attribute name="boundary">truncated</attribute>
+      <attribute name="review_state">needs_review</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="618.07" ytl="221.95" xbr="640.00" ybr="273.63" z_order="0">
+      <attribute name="visibility">unclear</attribute>
+      <attribute name="boundary">truncated</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="552.95" ytl="179.97" xbr="619.84" ybr="246.24" z_order="0">
+      <attribute name="visibility">occluded</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="497.24" ytl="148.00" xbr="549.07" ybr="185.71" z_order="0">
+      <attribute name="visibility">occluded</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="458.13" ytl="116.34" xbr="503.44" ybr="157.16" z_order="0">
+      <attribute name="visibility">occluded</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="424.00" ytl="87.60" xbr="456.27" ybr="128.14" z_order="0">
+      <attribute name="visibility">occluded</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="381.31" ytl="80.65" xbr="410.02" ybr="115.57" z_order="0">
+      <attribute name="visibility">occluded</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="410.02" ytl="67.46" xbr="435.94" ybr="100.82" z_order="0">
+      <attribute name="visibility">occluded</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="399.16" ytl="55.51" xbr="421.81" ybr="83.29" z_order="0">
+      <attribute name="visibility">occluded</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="361.45" ytl="52.41" xbr="383.33" ybr="85.30" z_order="0">
+      <attribute name="visibility">occluded</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">needs_review</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="384.10" ytl="30.37" xbr="401.02" ybr="55.20" z_order="0">
+      <attribute name="visibility">unclear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">needs_review</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="359.74" ytl="40.46" xbr="381.31" ybr="59.08" z_order="0">
+      <attribute name="visibility">unclear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">needs_review</attribute>
+    </box>
+    <box label="bus" source="manual" occluded="0" xtl="352.76" ytl="0.26" xbr="377.59" ybr="41.08" z_order="0">
+      <attribute name="visibility">unclear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">needs_review</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="380.07" ytl="13.92" xbr="398.23" ybr="39.68" z_order="0">
+      <attribute name="visibility">unclear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">needs_review</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="381.31" ytl="3.06" xbr="394.50" ybr="16.56" z_order="0">
+      <attribute name="visibility">unclear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">needs_review</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="298.44" ytl="41.46" xbr="316.60" ybr="70.17" z_order="0">
+      <attribute name="visibility">unclear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="203.30" ytl="0.00" xbr="216.25" ybr="9.59" z_order="0">
+      <attribute name="visibility">unclear</attribute>
+      <attribute name="boundary">truncated</attribute>
+      <attribute name="review_state">needs_review</attribute>
+    </box>
+    <box label="bus" source="manual" occluded="0" xtl="35.96" ytl="41.00" xbr="150.40" ybr="124.01" z_order="0">
+      <attribute name="visibility">occluded</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="498.12" ytl="0.00" xbr="511.91" ybr="23.92" z_order="0">
+      <attribute name="visibility">unclear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">needs_review</attribute>
+    </box>
+  </image>
+  <image id="1" name="drive_022.jpg" width="640" height="640">
+    <box label="bus" source="manual" occluded="0" xtl="103.60" ytl="354.70" xbr="416.12" ybr="571.30" z_order="0">
+      <attribute name="visibility">clear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="294.81" ytl="316.36" xbr="366.40" ybr="360.60" z_order="0">
+      <attribute name="visibility">occluded</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="139.38" ytl="302.40" xbr="200.25" ybr="346.53" z_order="0">
+      <attribute name="visibility">occluded</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="127.20" ytl="340.44" xbr="209.38" ybr="386.48" z_order="0">
+      <attribute name="visibility">clear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="truck" source="manual" occluded="0" xtl="575.25" ytl="260.26" xbr="629.26" ybr="327.99" z_order="0">
+      <attribute name="visibility">clear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+  </image>
+  <image id="2" name="drive_033.jpg" width="640" height="640">
+    <box label="car" source="manual" occluded="0" xtl="428.74" ytl="225.01" xbr="471.91" ybr="275.61" z_order="0">
+      <attribute name="visibility">clear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="bus" source="manual" occluded="0" xtl="0.00" ytl="437.40" xbr="189.60" ybr="640.00" z_order="0">
+      <attribute name="visibility">occluded</attribute>
+      <attribute name="boundary">truncated</attribute>
+      <attribute name="review_state">needs_review</attribute>
+    </box>
+    <box label="truck" source="manual" occluded="0" xtl="252.53" ytl="284.19" xbr="314.44" ybr="458.76" z_order="0">
+      <attribute name="visibility">clear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="282.52" ytl="223.16" xbr="316.41" ybr="270.04" z_order="0">
+      <attribute name="visibility">clear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="298.77" ytl="186.95" xbr="327.55" ybr="226.87" z_order="0">
+      <attribute name="visibility">occluded</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="562.42" ytl="265.86" xbr="615.80" ybr="325.27" z_order="0">
+      <attribute name="visibility">occluded</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="bus" source="manual" occluded="0" xtl="606.50" ytl="289.53" xbr="640.00" ybr="440.39" z_order="0">
+      <attribute name="visibility">occluded</attribute>
+      <attribute name="boundary">truncated</attribute>
+      <attribute name="review_state">needs_review</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="612.68" ytl="242.69" xbr="640.00" ybr="290.92" z_order="0">
+      <attribute name="visibility">clear</attribute>
+      <attribute name="boundary">truncated</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="576.80" ytl="186.62" xbr="611.90" ybr="227.79" z_order="0">
+      <attribute name="visibility">clear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="599.54" ytl="151.92" xbr="625.80" ybr="185.25" z_order="0">
+      <attribute name="visibility">unclear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="632.08" ytl="159.96" xbr="640.00" ybr="188.39" z_order="0">
+      <attribute name="visibility">unclear</attribute>
+      <attribute name="boundary">truncated</attribute>
+      <attribute name="review_state">needs_review</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="394.75" ytl="154.85" xbr="424.37" ybr="186.83" z_order="0">
+      <attribute name="visibility">clear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="378.04" ytl="121.33" xbr="398.95" ybr="147.37" z_order="0">
+      <attribute name="visibility">unclear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="354.16" ytl="126.87" xbr="372.70" ybr="149.40" z_order="0">
+      <attribute name="visibility">unclear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="320.44" ytl="127.59" xbr="338.79" ybr="151.36" z_order="0">
+      <attribute name="visibility">unclear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="354.10" ytl="107.09" xbr="373.20" ybr="128.81" z_order="0">
+      <attribute name="visibility">unclear</attribute>
+      <attribute name="boundary">truncated</attribute>
+      <attribute name="review_state">needs_review</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="167.70" ytl="161.82" xbr="196.30" ybr="197.09" z_order="0">
+      <attribute name="visibility">clear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="147.23" ytl="149.14" xbr="169.03" ybr="178.84" z_order="0">
+      <attribute name="visibility">occluded</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="261.89" ytl="109.19" xbr="277.48" ybr="130.74" z_order="0">
+      <attribute name="visibility">unclear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="252.88" ytl="90.24" xbr="268.31" ybr="110.87" z_order="0">
+      <attribute name="visibility">unclear</attribute>
+      <attribute name="boundary">truncated</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="276.11" ytl="72.20" xbr="287.57" ybr="87.79" z_order="0">
+      <attribute name="visibility">unclear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">needs_review</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="290.63" ytl="48.51" xbr="297.97" ybr="56.76" z_order="0">
+      <attribute name="visibility">unclear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">needs_review</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="279.60" ytl="48.70" xbr="287.90" ybr="57.20" z_order="0">
+      <attribute name="visibility">clear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">needs_review</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="339.39" ytl="42.55" xbr="346.30" ybr="51.00" z_order="0">
+      <attribute name="visibility">unclear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">needs_review</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="345.50" ytl="37.80" xbr="351.50" ybr="44.40" z_order="0">
+      <attribute name="visibility">unclear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">needs_review</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="300.15" ytl="43.15" xbr="308.35" ybr="53.95" z_order="0">
+      <attribute name="visibility">unclear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">needs_review</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="565.90" ytl="507.38" xbr="640.00" ybr="633.79" z_order="0">
+      <attribute name="visibility">clear</attribute>
+      <attribute name="boundary">truncated</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="van" source="manual" occluded="0" xtl="558.52" ytl="141.57" xbr="581.65" ybr="184.02" z_order="0">
+      <attribute name="visibility">unclear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">needs_review</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="361.50" ytl="35.85" xbr="369.94" ybr="46.34" z_order="0">
+      <attribute name="visibility">unclear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">needs_review</attribute>
+    </box>
+  </image>
+  <image id="3" name="drive_038.jpg" width="640" height="640">
+    <box label="car" source="manual" occluded="0" xtl="341.86" ytl="521.97" xbr="538.29" ybr="640.00" z_order="0">
+      <attribute name="visibility">clear</attribute>
+      <attribute name="boundary">truncated</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="579.44" ytl="547.19" xbr="640.00" ybr="640.00" z_order="0">
+      <attribute name="visibility">unclear</attribute>
+      <attribute name="boundary">truncated</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="van" source="manual" occluded="0" xtl="285.49" ytl="338.38" xbr="474.17" ybr="495.92" z_order="0">
+      <attribute name="visibility">clear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="bus" source="manual" occluded="0" xtl="0.00" ytl="96.94" xbr="43.78" ybr="188.51" z_order="0">
+      <attribute name="visibility">occluded</attribute>
+      <attribute name="boundary">truncated</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="van" source="manual" occluded="0" xtl="0.68" ytl="183.99" xbr="51.73" ybr="257.40" z_order="0">
+      <attribute name="visibility">clear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="0.00" ytl="187.08" xbr="21.80" ybr="229.23" z_order="0">
+      <attribute name="visibility">unclear</attribute>
+      <attribute name="boundary">truncated</attribute>
+      <attribute name="review_state">needs_review</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="67.12" ytl="126.74" xbr="102.65" ybr="169.49" z_order="0">
+      <attribute name="visibility">clear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="606.90" ytl="178.26" xbr="640.00" ybr="227.80" z_order="0">
+      <attribute name="visibility">clear</attribute>
+      <attribute name="boundary">truncated</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="601.60" ytl="155.29" xbr="640.00" ybr="195.26" z_order="0">
+      <attribute name="visibility">clear</attribute>
+      <attribute name="boundary">truncated</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="van" source="manual" occluded="0" xtl="491.85" ytl="108.09" xbr="581.12" ybr="207.29" z_order="0">
+      <attribute name="visibility">occluded</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="truck" source="manual" occluded="0" xtl="421.21" ytl="136.65" xbr="522.21" ybr="213.60" z_order="0">
+      <attribute name="visibility">clear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="331.90" ytl="155.59" xbr="403.78" ybr="213.00" z_order="0">
+      <attribute name="visibility">clear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="344.51" ytl="134.88" xbr="408.01" ybr="179.15" z_order="0">
+      <attribute name="visibility">occluded</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="409.07" ytl="109.95" xbr="475.22" ybr="159.40" z_order="0">
+      <attribute name="visibility">occluded</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="346.90" ytl="100.41" xbr="399.80" ybr="136.33" z_order="0">
+      <attribute name="visibility">occluded</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="271.96" ytl="125.81" xbr="332.26" ybr="167.01" z_order="0">
+      <attribute name="visibility">occluded</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="245.39" ytl="140.43" xbr="306.77" ybr="184.75" z_order="0">
+      <attribute name="visibility">occluded</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="176.69" ytl="120.90" xbr="238.70" ybr="168.70" z_order="0">
+      <attribute name="visibility">unclear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="215.07" ytl="115.83" xbr="259.09" ybr="150.75" z_order="0">
+      <attribute name="visibility">unclear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="95.15" ytl="95.70" xbr="129.48" ybr="128.06" z_order="0">
+      <attribute name="visibility">unclear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="bus" source="manual" occluded="0" xtl="35.16" ytl="44.90" xbr="125.79" ybr="142.62" z_order="0">
+      <attribute name="visibility">occluded</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="van" source="manual" occluded="0" xtl="120.44" ytl="46.85" xbr="148.32" ybr="82.47" z_order="0">
+      <attribute name="visibility">occluded</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="bus" source="manual" occluded="0" xtl="73.04" ytl="0.00" xbr="159.93" ybr="57.50" z_order="0">
+      <attribute name="visibility">unclear</attribute>
+      <attribute name="boundary">truncated</attribute>
+      <attribute name="review_state">needs_review</attribute>
+    </box>
+    <box label="bus" source="manual" occluded="0" xtl="138.71" ytl="11.69" xbr="189.37" ybr="60.63" z_order="0">
+      <attribute name="visibility">occluded</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="160.86" ytl="44.99" xbr="181.47" ybr="68.69" z_order="0">
+      <attribute name="visibility">unclear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="181.78" ytl="45.30" xbr="202.07" ybr="67.91" z_order="0">
+      <attribute name="visibility">unclear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="214.92" ytl="36.80" xbr="233.20" ybr="57.07" z_order="0">
+      <attribute name="visibility">unclear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="bus" source="manual" occluded="0" xtl="184.25" ytl="0.00" xbr="227.93" ybr="32.91" z_order="0">
+      <attribute name="visibility">clear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="187.95" ytl="30.17" xbr="202.95" ybr="44.87" z_order="0">
+      <attribute name="visibility">unclear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="199.15" ytl="31.87" xbr="214.45" ybr="53.47" z_order="0">
+      <attribute name="visibility">unclear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">needs_review</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="214.55" ytl="23.67" xbr="229.76" ybr="38.37" z_order="0">
+      <attribute name="visibility">unclear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">needs_review</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="225.15" ytl="11.67" xbr="241.36" ybr="32.37" z_order="0">
+      <attribute name="visibility">unclear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="bus" source="manual" occluded="0" xtl="569.30" ytl="0.00" xbr="640.00" ybr="79.90" z_order="0">
+      <attribute name="visibility">occluded</attribute>
+      <attribute name="boundary">truncated</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="580.96" ytl="64.72" xbr="611.69" ybr="92.22" z_order="0">
+      <attribute name="visibility">clear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="van" source="manual" occluded="0" xtl="528.68" ytl="12.68" xbr="551.48" ybr="40.43" z_order="0">
+      <attribute name="visibility">unclear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">needs_review</attribute>
+    </box>
+    <box label="bus" source="manual" occluded="0" xtl="558.66" ytl="22.10" xbr="577.00" ybr="43.16" z_order="0">
+      <attribute name="visibility">unclear</attribute>
+      <attribute name="boundary">truncated</attribute>
+      <attribute name="review_state">needs_review</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="225.41" ytl="0.00" xbr="256.91" ybr="22.47" z_order="0">
+      <attribute name="visibility">clear</attribute>
+      <attribute name="boundary">inside</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="0.00" ytl="540.55" xbr="49.87" ybr="640.00" z_order="0">
+      <attribute name="visibility">clear</attribute>
+      <attribute name="boundary">truncated</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+    <box label="car" source="manual" occluded="0" xtl="81.73" ytl="532.60" xbr="266.21" ybr="640.00" z_order="0">
+      <attribute name="visibility">clear</attribute>
+      <attribute name="boundary">truncated</attribute>
+      <attribute name="review_state">confident</attribute>
+    </box>
+  </image>
+</annotations>

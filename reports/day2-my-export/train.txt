@@ -1,0 +1,4 @@
+data/images/train/drive_008.jpg
+data/images/train/drive_022.jpg
+data/images/train/drive_033.jpg
+data/images/train/drive_038.jpg
