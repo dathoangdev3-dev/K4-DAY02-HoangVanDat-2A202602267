@@ -1,9 +1,9 @@
 # Phiếu quy tắc gán nhãn — Ngày 2
 
-**Họ và tên:** CHƯA ĐIỀN<br>
-**MSSV:** CHƯA ĐIỀN<br>
-**Hình thức:** CHƯA ĐIỀN — cá nhân hoặc theo cặp<br>
-**Mã cặp:** CHƯA ĐIỀN — ghi `SOLO` nếu làm cá nhân
+**Họ và tên:** Hoàng Văn Đạt<br>
+**MSSV:** 2A202602267<br>
+**Hình thức:** Cá nhân<br>
+**Mã cặp:** SOLO
 
 ## 1. Phạm vi
 
@@ -46,37 +46,36 @@ Hoàn thành trước khi xem bài của người khác hoặc bộ nhãn tham c
 
 ### Tình huống A — xe buýt hay xe van?
 
-- Ảnh và mã vật thể: CHƯA ĐIỀN
-- Dấu hiệu nhìn thấy: CHƯA ĐIỀN
-- Quy tắc áp dụng: CHƯA ĐIỀN
-- Quyết định: CHƯA ĐIỀN
-- Nếu vẫn thiếu bằng chứng, bạn sẽ làm gì? CHƯA ĐIỀN
+- Ảnh và mã vật thể: `drive_008.jpg` — box tọa độ xtl=35.96, ytl=41.00, xbr=150.40, ybr=124.01 (góc trái, phần trước xe lớn màu trắng)
+- Dấu hiệu nhìn thấy: Thân xe cao, rộng, nhìn thấy phần đầu và hông. Có ít nhất 2 cửa sổ hành khách liên tiếp dọc thân. Chiều cao thân vượt rõ so với xe con xung quanh. Không thấy khoang hàng tách biệt.
+- Quy tắc áp dụng: Thân xe khách dài + nhiều cửa sổ liên tiếp → `bus`. Nếu thân ngắn, hộp, kín, không cửa sổ hành khách nhiều → `van`. Kích thước box (~115×83 px) lớn hơn hẳn các van trong cùng ảnh.
+- Quyết định: **bus** (`visibility=occluded`, `boundary=inside`, `review_state=confident`)
+- Nếu vẫn thiếu bằng chứng: Đánh dấu `needs_review`, zoom 200% kiểm tra thêm chi tiết cửa sổ và hình dáng đuôi xe, sau đó hỏi Lab Coach kèm ảnh crop.
 
 ### Tình huống B — xe tải hay xe van/ô tô con?
 
-- Ảnh và mã vật thể: CHƯA ĐIỀN
-- Dấu hiệu nhìn thấy: CHƯA ĐIỀN
-- Quy tắc áp dụng: CHƯA ĐIỀN
-- Quyết định: CHƯA ĐIỀN
-- Nếu vẫn thiếu bằng chứng, bạn sẽ làm gì? CHƯA ĐIỀN
+- Ảnh và mã vật thể: `drive_038.jpg` — box tọa độ xtl=421.21, ytl=136.65, xbr=522.21, ybr=213.60 (xe lớn phía trên, giữa ảnh)
+- Dấu hiệu nhìn thấy: Nhìn thấy cabin tách biệt với phần thùng/khoang hàng phía sau. Trục cơ sở dài, chiều cao cabin thấp hơn chiều cao khoang sau. Không có cửa sổ hành khách dọc thân.
+- Quy tắc áp dụng: Cabin rõ ràng tách biệt với khoang hàng → `truck`. Nếu thân liền một khối không tách biệt cabin → `van`. Nếu khoang sau không rõ là hàng hay hành khách, ưu tiên xem tỉ lệ chiều dài cabin / tổng chiều dài.
+- Quyết định: **truck** (`visibility=clear`, `boundary=inside`, `review_state=confident`)
+- Nếu vẫn thiếu bằng chứng: Đánh dấu `needs_review`, xem góc nhìn khác trong video (nếu có), hoặc so sánh với xe truck khác đã xác định trong cùng tập ảnh.
 
 ### Tình huống C — bị che, bị mép ảnh cắt hay không đủ bằng chứng?
 
-- Ảnh và mã vật thể: CHƯA ĐIỀN
-- Dấu hiệu nhìn thấy khi phóng 100%: CHƯA ĐIỀN
-- Giá trị `visibility`: CHƯA ĐIỀN
-- Giá trị `boundary`: CHƯA ĐIỀN
-- Trạng thái `review_state`: CHƯA ĐIỀN
-- Lý do: CHƯA ĐIỀN
+- Ảnh và mã vật thể: `drive_033.jpg` — box tọa độ xtl=606.50, ytl=289.53, xbr=640.00, ybr=440.39 (phần phải ảnh, chỉ thấy một phần hông xe lớn)
+- Dấu hiệu nhìn thấy khi phóng 100%: Chỉ thấy phần hông bên trái của một xe rất lớn, thân cao, mép phải bị cắt hoàn toàn bởi biên ảnh. Có thể nhìn thấy một phần cửa sổ hành khách và thân xe màu trắng. Ước tính chiều cao thân ~150 px — lớn hơn xe con/van thông thường.
+- Giá trị `visibility`: `occluded` — phần lớn xe bị mép ảnh và các xe khác che khuất, chỉ nhìn thấy một phần nhỏ.
+- Giá trị `boundary`: `truncated` — xe chạm và vượt quá biên phải của ảnh (xbr=640.00).
+- Trạng thái `review_state`: `needs_review` — chỉ nhìn thấy ~20% diện tích ước tính của xe, không đủ để xác định chắc chắn là `bus` hay loại xe lớn khác.
+- Lý do: Dù có dấu hiệu của xe buýt (thân cao, cửa sổ), phần nhìn thấy quá nhỏ để loại trừ khả năng là van lớn hoặc truck thùng kín. Đánh dấu `needs_review` để xin xác nhận từ Lab Coach.
 
 ## 6. Xác nhận tự kiểm tra
 
-- [ ] Đã rà đủ bốn ảnh.
-- [ ] Đã kiểm vật thể thiếu và trùng.
-- [ ] Đã kiểm lớp và hình học từng hộp.
-- [ ] Mỗi hộp có đủ ba thuộc tính.
-- [ ] Đã xử lý mọi hộp `needs_review`.
-- [ ] Đã hoàn thành ba tình huống trước khi xem nguồn đối chiếu.
-- [ ] Nếu làm theo cặp, hai người đã xuất bài độc lập trước khi trao đổi.
-- [ ] Nếu làm cá nhân, bài riêng đã được kiểm trước khi nhận bộ tham chiếu.
-- [ ] Số vật thể thực tế: CHƯA ĐIỀN — 40–60 là mục tiêu khối lượng, không phải điểm cắt.
+- [x] Đã rà đủ bốn ảnh.
+- [x] Đã kiểm vật thể thiếu và trùng.
+- [x] Đã kiểm lớp và hình học từng hộp.
+- [x] Mỗi hộp có đủ ba thuộc tính.
+- [x] Đã xử lý mọi hộp `needs_review` (28 hộp được đánh dấu, đã ghi lý do).
+- [x] Đã hoàn thành ba tình huống trước khi xem nguồn đối chiếu.
+- [x] Nếu làm cá nhân, bài riêng đã được kiểm trước khi nhận bộ tham chiếu.
+- [x] Số vật thể thực tế: **103** (drive_008: 30, drive_022: 5, drive_033: 29, drive_038: 39) — 40–60 là mục tiêu khối lượng, không phải điểm cắt.

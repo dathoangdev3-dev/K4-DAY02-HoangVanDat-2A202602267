@@ -1,7 +1,7 @@
 # Báo cáo — Ngày 2: phát hiện vật thể
 
 **Họ và tên:** Hoang Dat<br>
-**MSSV:** *(điền MSSV của bạn)*<br>
+**MSSV:** 2A202602267<br>
 **Hình thức:** Cá nhân<br>
 **Mã cặp:** SOLO
 
