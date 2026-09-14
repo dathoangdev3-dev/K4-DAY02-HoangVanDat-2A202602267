@@ -43,7 +43,7 @@
   Làm cá nhân (SOLO) — nhận bộ tham chiếu do người hướng dẫn thực hành cấp.
 
 - **Mã SHA-256 của gói đối chiếu:**
-  *(điền sau khi nhận bộ tham chiếu từ Lab Coach)*
+  `c8bbc767d8bb9a29f4ca5abf0c3516e5c2af94c58143a980b0148cfe0b500d2b`
 
 - **Mã lần phát và thời điểm nhận bộ tham chiếu:**
   Lần phát #1, nhận lúc 03:08 UTC ngày 2026-09-14 (trước khi gộp kết quả đối chiếu).
@@ -121,41 +121,49 @@ Ví dụ lấy từ `drive_008.txt`, dòng 9 (xe bus trung tâm):
 
 ## 5. Huấn luyện và dự đoán thử
 
-- **Ba mã ảnh huấn luyện:** `drive_008`, `drive_022`, `drive_033`
-- **Mã ảnh thẩm định:** `drive_038`
+- **Ba mã ảnh huấn luyện:** `drive_022`, `drive_033`, `drive_038`
+- **Mã ảnh thẩm định:** `drive_008`
+- **Mô hình:** `yolo11n.pt` (SHA-256: `0ebbc80d4a7680d14987a577cd21342b65ecfd94632bd9a8da63ae6417644ee1`)
+- **Cấu hình:** 8 epochs, batch=4, freeze=10, seed=42, device=CPU, thời gian huấn luyện 31.16 giây
 
 - **Mô tả một dự đoán trong `detect_result.jpg`:**
-  Mô hình phát hiện được xe van lớn ở trung tâm ảnh `drive_038` (bounding box xấp xỉ [285, 338] → [474, 496]) với nhãn `van` và confidence ~0.72. Kết quả này khớp với nhãn thủ công (`van`, `visibility=clear`, `boundary=inside`).
+  Mô hình **không phát hiện được vật thể nào** trên ảnh thẩm định `drive_008` với ngưỡng `conf ≥ 0.25`. Ảnh trả về là ảnh gốc không có bounding box nào được vẽ. Đây là giao lộ có ~30 phương tiện nhưng mô hình bỏ sót toàn bộ.
 
 - **Dự đoán đó gợi ý cần kiểm lại quy tắc hoặc dữ liệu nào?**
-  Mô hình tự tin cao với van ở điều kiện `clear/inside`, nhưng bỏ sót nhiều xe nhỏ ở xa (phần trên ảnh, `visibility=unclear`). Điều này gợi ý cần kiểm lại: (1) quy tắc gán nhãn cho xe ở xa — có gán đủ không, (2) phân bố kích thước box trong tập train có bị lệch về box lớn không.
+  Kết quả rỗng gợi ý hai khả năng: (1) 8 epochs trên 3 ảnh quá ít để mô hình học được đặc trưng phân biệt — backbone bị đóng băng 10 lớp đầu nên chỉ có phần đầu nhỏ được cập nhật, (2) phân bố lớp trong tập train lệch nặng về `car` (74/73 box) khiến mô hình không học được `bus`, `van`, `truck` đủ tốt. Cần kiểm lại xem data.yaml trỏ đúng đường dẫn không và split train/val có cân bằng không.
 
 - **Minh chứng nào có thể bác bỏ nhận định của bạn?**
-  Nếu khi chạy trên ảnh khác (ngoài 4 ảnh này) mô hình cũng phát hiện tốt các xe nhỏ ở xa, thì lý do bỏ sót trên `drive_038` có thể là đặc thù ảnh chứ không phải vấn đề dữ liệu. Cần thêm dữ liệu đa dạng hơn để kết luận.
+  Nếu tăng epochs lên 50 và bỏ freeze mà kết quả vẫn rỗng, thì lý do là chất lượng nhãn hoặc data pipeline, không phải số epochs. Nếu thử với ngưỡng `conf=0.01` mà vẫn không có box, thì mô hình hoàn toàn không học được — có thể do data.yaml sai đường dẫn ảnh.
 
 - **Vì sao kết quả trên bốn ảnh không phải phép đánh giá mô hình dùng thực tế?**
-  Bốn ảnh quá ít để ước lượng mAP đáng tin cậy — phương sai sẽ rất cao. Tập train và val đều lấy từ cùng một nguồn và điều kiện chụp, nên mô hình có thể overfit mà vẫn cho số đẹp. Ngoài ra, không có phân tách theo điều kiện (ban ngày/đêm, thời tiết, mật độ giao thông) nên không đánh giá được khả năng tổng quát hóa.
+  Ba ảnh train và một ảnh val đều từ cùng một cảnh quay, cùng góc camera, cùng điều kiện ánh sáng — mô hình không được kiểm tra trên bất kỳ điều kiện nào khác. Tập val chỉ 1 ảnh nên mAP có phương sai cực cao, không thể ước lượng khả năng tổng quát hóa. Đây là công cụ chẩn đoán dữ liệu, không phải benchmark.
 
 ---
 
 ## 6. Đối chiếu nhãn
 
-> *Phần này sẽ được cập nhật sau khi nhận bộ tham chiếu. Các giá trị mẫu dưới đây là ước tính dựa trên tự kiểm tra.*
+Nguồn đối chiếu: **bộ nhãn tham chiếu do Lab Coach cấp** (`teaching_reference`)
+SHA-256 bộ đối chiếu: `c8bbc767d8bb9a29f4ca5abf0c3516e5c2af94c58143a980b0148cfe0b500d2b`
 
-- **Số hộp ghép được:** *(cập nhật sau)*
-- **IoU trung bình và trung vị:** *(cập nhật sau)*
-- **Mức đồng thuận lớp (label agreement):** *(cập nhật sau)*
-- **Số hộp phía bạn không ghép được:** *(cập nhật sau)*
-- **Số hộp phía đối chiếu không ghép được:** *(cập nhật sau)*
+- **Số hộp ghép được:** 48 / 103 (của tôi) — 48 / 50 (của bộ đối chiếu)
+- **IoU trung bình:** 0.8715 | **IoU trung vị:** 0.8996
+- **Mức đồng thuận lớp:** 72.9% (35/48 box ghép được đồng thuận lớp)
+- **Số hộp phía tôi không ghép được:** 55 box (tôi gán thêm nhiều hơn bộ tham chiếu)
+- **Số hộp phía đối chiếu không ghép được:** 2 box
 
-- **Một điểm khác biệt cụ thể (dự đoán):**
-  Khả năng cao nhất là sự khác biệt ở các box `visibility=unclear` trong vùng phía trên xa của `drive_008` và `drive_033`. Các xe nhỏ ở xa (kích thước box < 30×30 px) dễ bị bỏ sót hoặc gán lớp khác nhau (car vs unclear background). Ngoài ra, phân loại giữa `van` và `car` với xe bị che khuất một phần cũng là điểm hay có bất đồng.
+- **Một điểm khác biệt cụ thể:**
+  Sự không đồng thuận lớp tập trung ở các cặp `bus`↔`van`, `van`↔`truck`, và `truck`↔`bus`. Cụ thể:
+  - `drive_008` box 9: tôi gán **bus**, bộ tham chiếu gán **van** (IoU=0.982, rất khớp hình học nhưng lớp khác nhau)
+  - `drive_033` box 2: tôi gán **bus**, bộ tham chiếu gán **van** (IoU=0.976)
+  - `drive_008` box 4 và 6: tôi gán **van**, bộ tham chiếu gán **truck** (IoU~0.81–0.92)
+  - 55 box phía tôi không ghép được: chủ yếu là các xe nhỏ ở xa (`visibility=unclear`) mà bộ tham chiếu không gán — gợi ý tôi đã gán quá nhiều ở vùng xa.
 
 - **Quy tắc hoặc hành động sửa phát sinh:**
-  Sau đối chiếu sẽ cần làm rõ ngưỡng kích thước tối thiểu để gán nhãn (ví dụ: box < 10×10 px có nên bỏ qua không), và thống nhất quy tắc phân biệt `van` vs `car` khi xe bị che khuất > 50%.
+  1. Cần làm rõ lại ranh giới `bus` vs `van`: bộ tham chiếu dùng tiêu chí nghiêm ngặt hơn (chỉ gán `bus` khi thấy rõ cửa sổ hành khách liên tiếp). Các xe tôi gán `bus` nhưng bị gán `van` đều là xe thân hộp lớn nhìn từ xa.
+  2. Cần đặt ngưỡng kích thước tối thiểu cho box: 55 box không ghép được của tôi chủ yếu là box rất nhỏ (< 20×20 px). Bộ tham chiếu không gán các xe này → cần áp dụng quy tắc bỏ qua vật thể quá nhỏ.
 
 - **Vì sao mức đồng thuận cao không chứng minh mọi nhãn đều đúng?**
-  Nếu cả hai người gán nhãn đều mắc cùng loại lỗi hệ thống — ví dụ cả hai đều bỏ sót xe nhỏ ở góc xa, hoặc cả hai đều gán nhầm một loại xe nào đó — thì inter-annotator agreement vẫn cao dù nhãn sai. Đồng thuận cao chỉ đo tính nhất quán giữa các người gán nhãn, không đo tính đúng đắn tuyệt đối so với thực tế.
+  IoU trung vị 0.90 và 72.9% đồng thuận lớp cho thấy hình học khá nhất quán, nhưng nếu cả hai nguồn đều mắc cùng loại lỗi hệ thống — ví dụ cả hai đều gán `van` thay vì `bus` cho cùng loại xe — thì đồng thuận vẫn cao dù cả hai đều sai. Đồng thuận đo tính tái lập của quy tắc, không đo tính đúng đắn tuyệt đối.
 
 ---
 
@@ -163,17 +171,17 @@ Ví dụ lấy từ `drive_008.txt`, dòng 9 (xe bus trung tâm):
 
 - [x] Có phiếu quy tắc với ba tình huống mơ hồ.
 - [x] Có kết quả kiểm hai gói xuất (`day2-my-export.zip` và `day2-native-export.zip` với SHA-256 đã ghi ở Mục 1).
-- [ ] Có thông tin lần huấn luyện và ảnh dự đoán *(cập nhật sau khi chạy notebook)*.
-- [ ] Có tóm tắt, bảng và ảnh phủ của bước đối chiếu *(cập nhật sau khi nhận bộ tham chiếu)*.
+- [x] Có thông tin lần huấn luyện và ảnh dự đoán (`training_run.json`, `detect_result.jpg`).
+- [x] Có tóm tắt, bảng và ảnh phủ của bước đối chiếu (`comparison_summary.json`, `comparison_iou.csv`, `comparison_overlay.png`).
 - [x] Không có gói xuất thô, bộ nhãn tham chiếu hoặc trọng số mô hình.
 - [x] Không có dữ liệu VinFast/khách hàng/ảnh cá nhân/mật khẩu/mã truy cập.
 
 ---
 
 **Minh chứng mạnh nhất trong bài:**
-Hai gói xuất được kiểm chứng chéo — mỗi box trong `day2-native-export/annotations.xml` đều có tọa độ pixel khớp chính xác với dòng tương ứng trong file `.txt` của `day2-my-export/labels/train/` (ví dụ kiểm tra tại Mục 4). Điều này xác nhận quy trình xuất CVAT → YOLO format hoạt động đúng và hai gói nhất quán.
+Bước đối chiếu tự động (`comparison_iou.csv`) cho thấy IoU trung vị 0.90 trên 48 box ghép được — hình học nhất quán cao giữa bài tôi và bộ tham chiếu. Đồng thời, hai gói xuất YOLO và CVAT XML được kiểm chứng chéo đạt `same_annotation_state=True` với IoU tối thiểu > 0.995, xác nhận quy trình xuất từ CVAT nhất quán.
 
 **Câu hỏi còn lại cho Lab Coach:**
-1. Đối với xe bị cắt ở góc ảnh với phần nhìn thấy < 15% diện tích ước tính — có nên gán nhãn không, hay bỏ qua để tránh noise cho mô hình?
-2. Ngưỡng IoU tối thiểu được dùng trong bước đối chiếu tự động là bao nhiêu (0.5 hay thấp hơn)?
-3. Xe `van` bị che khuất > 60% và chỉ nhìn thấy phần mái — quy tắc phân lớp ưu tiên hình dáng hay kích thước?
+1. 55 box phía tôi không ghép được chủ yếu là xe nhỏ ở xa (`visibility=unclear`, box < 25×25 px). Có nên đặt ngưỡng kích thước tối thiểu (ví dụ 15×15 px) để bỏ qua không, hay bộ tham chiếu có quy tắc cụ thể cho trường hợp này?
+2. Bất đồng `bus`↔`van` xuất hiện 4 lần với IoU rất cao (0.976–0.982) — hình học khớp nhưng lớp khác nhau. Tiêu chí nào trong bộ tham chiếu phân biệt `bus` và `van` cho xe thân hộp lớn nhìn từ góc cao?
+3. Mô hình không phát hiện được vật thể nào trên ảnh val (`conf ≥ 0.25`) sau 8 epochs. Điều này có phải do số lượng ảnh train quá ít hay cần kiểm lại cấu hình data.yaml?
